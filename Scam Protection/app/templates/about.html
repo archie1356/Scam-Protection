@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ScamShield - Prototype</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+<<<<<<< HEAD
+            background: rgb(28, 3, 1);
+=======
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            line-height: 1.8;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        
+        ul, ol {
+            margin-left: 24px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>About ScamShield</h1>
+        </div>
+        
+        <div class="card">
+<<<<<<< HEAD
+            <h2>Project Overview</h2>
+=======
+            <h2>🛡️ Project Overview</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <p>
+                <strong>ScamShield</strong> is an AI-driven prototype for detecting coached-payment fraud,
+                specifically targeting scenarios where scammers actively guide victims through payment 
+                transactions via phone calls, remote-access software, or psychological manipulation.
+            </p>
+            
+            <div class="warning-box">
+<<<<<<< HEAD
+                <strong>Important:</strong> This is a proof-of-concept prototype evaluated on 
+                synthetic data. Results do not represent real-world fraud detection performance.
+            </div>
+            
+            <h2>The Problem</h2>
+=======
+                <strong>⚠️ Important:</strong> This is a proof-of-concept prototype evaluated on 
+                synthetic data. Results do not represent real-world fraud detection performance.
+            </div>
+            
+            <h2>🎯 The Problem</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <p>
+                Coached-payment fraud is a growing threat where scammers:
+            </p>
+            <ul>
+                <li>Impersonate bank officials, customer care, or law enforcement</li>
+                <li>Create urgency through "digital arrest" or account-freezing threats</li>
+                <li>Guide victims step-by-step through payment transactions</li>
+                <li>Use remote-access apps to directly control victim devices</li>
+                <li>Target vulnerable populations, especially older adults</li>
+            </ul>
+            
+<<<<<<< HEAD
+            <h2>How ScamShield Works</h2>
+=======
+            <h2>💡 How ScamShield Works</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            
+            <h3>Detection Signals (8 Features)</h3>
+            <ol>
+                <li><strong>Call Active:</strong> Whether a phone call is ongoing during payment</li>
+                <li><strong>Remote App Present:</strong> Detection of screen-sharing/remote-access apps</li>
+                <li><strong>Payee is New:</strong> Whether the payee was recently added</li>
+                <li><strong>Payee Age:</strong> Days since the payee was created</li>
+                <li><strong>Amount Ratio:</strong> Payment size compared to user's typical amount</li>
+                <li><strong>Confirmation Time:</strong> Time spent on payment confirmation screen</li>
+                <li><strong>Payee Reports:</strong> Previous fraud reports associated with payee</li>
+                <li><strong>Time of Day:</strong> Transaction hour (0-23)</li>
+            </ol>
+            
+            <h3>Dual-Engine Risk Assessment</h3>
+            <p><strong>1. Machine Learning Model:</strong></p>
+            <ul>
+                <li>Logistic Regression trained on 3,000 synthetic transactions</li>
+                <li>Explainable model with interpretable feature weights</li>
+                <li>Provides probability score for fraud likelihood</li>
+            </ul>
+            
+            <p><strong>2. Transparent Rule-Based Scoring:</strong></p>
+            <ul>
+                <li>Weighted scoring system for each risk signal</li>
+                <li>Provides clear, auditable risk calculation</li>
+                <li>Generates human-readable explanations</li>
+            </ul>
+            
+            <h3>Four-Tier Response System</h3>
+            <ol>
+                <li><strong>PASS (0-24 points):</strong> Transaction appears normal</li>
+                <li><strong>SOFT WARNING (25-44):</strong> Some unusual signals detected</li>
+                <li><strong>DELAY & CONFIRM (45-69):</strong> Multiple suspicious indicators</li>
+                <li><strong>HUMAN REVIEW (70+):</strong> High-risk pattern detected</li>
+            </ol>
+            
+            <div class="info-box">
+<<<<<<< HEAD
+                <strong>Key Principle:</strong> ScamShield <em>never automatically blocks</em> 
+                transactions. It provides warnings and recommendations while allowing users final control.
+            </div>
+            
+            <h2>Privacy & Data Protection</h2>
+=======
+                <strong>ℹ️ Key Principle:</strong> ScamShield <em>never automatically blocks</em> 
+                transactions. It provides warnings and recommendations while allowing users final control.
+            </div>
+            
+            <h2>🔒 Privacy & Data Protection</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <p><strong>What ScamShield Analyzes:</strong></p>
+            <ul>
+                <li>Transaction metadata (amount, payee, timing)</li>
+                <li>Session context (call status, app detection)</li>
+                <li>Behavioral signals (confirmation time)</li>
+            </ul>
+            
+            <p><strong>What ScamShield Does NOT:</strong></p>
+            <ul>
+                <li>❌ Record or analyze call audio</li>
+                <li>❌ Store phone conversations</li>
+                <li>❌ Use voice cloning or speech recognition</li>
+                <li>❌ Access personal communications</li>
+            </ul>
+            
+<<<<<<< HEAD
+            <h2>Technical Architecture</h2>
+=======
+            <h2>📊 Technical Architecture</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <ul>
+                <li><strong>Backend:</strong> Python + FastAPI</li>
+                <li><strong>ML Framework:</strong> scikit-learn</li>
+                <li><strong>Model:</strong> Logistic Regression (explainable)</li>
+                <li><strong>Dataset:</strong> 3,000 synthetic transactions</li>
+                <li><strong>Split:</strong> 80% train / 20% test (stratified)</li>
+                <li><strong>Features:</strong> Standard scaling for numerical features</li>
+            </ul>
+            
+<<<<<<< HEAD
+            <h2>Limitations</h2>
+=======
+            <h2>⚠️ Limitations</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <div class="warning-box">
+                <ul style="margin: 0;">
+                    <li>All data is synthetic - not trained on real fraud cases</li>
+                    <li>Performance metrics reflect synthetic data only</li>
+                    <li>Real-world deployment requires extensive validation</li>
+                    <li>Needs integration with authorized banking/OS APIs</li>
+                    <li>Would require regulatory compliance and user consent</li>
+                    <li>False positives may frustrate legitimate users</li>
+                    <li>Sophisticated scammers may evade detection patterns</li>
+                </ul>
+            </div>
+            
+<<<<<<< HEAD
+            <h2>Real-World Deployment Requirements</h2>
+=======
+            <h2>🚀 Real-World Deployment Requirements</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <p>For production deployment, ScamShield would need:</p>
+            <ol>
+                <li><strong>Real Training Data:</strong> Historical fraud cases with labeled outcomes</li>
+                <li><strong>Platform Integration:</strong> Authorization from OS/banking partners</li>
+                <li><strong>Privacy Compliance:</strong> GDPR, local data protection laws</li>
+                <li><strong>User Consent:</strong> Transparent opt-in mechanisms</li>
+                <li><strong>Continuous Learning:</strong> Model updates as fraud patterns evolve</li>
+                <li><strong>Human Review Process:</strong> Support team for escalated cases</li>
+                <li><strong>A/B Testing:</strong> Careful validation before full rollout</li>
+                <li><strong>Bias Auditing:</strong> Ensure fair treatment across demographics</li>
+            </ol>
+            
+<<<<<<< HEAD
+            <h2>Educational Purpose</h2>
+=======
+            <h2>🎓 Educational Purpose</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <p>
+                This prototype demonstrates how AI can augment fraud detection while maintaining 
+                explainability and user control. It's designed for:
+            </p>
+            <ul>
+                <li>Hackathon demonstration</li>
+                <li>Educational exploration of ML for fraud detection</li>
+                <li>Discussion of ethical AI in financial security</li>
+                <li>Prototype validation before real-world investment</li>
+            </ul>
+            
+<<<<<<< HEAD
+            <h2>Technologies Used</h2>
+=======
+            <h2>📝 Technologies Used</h2>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <ul>
+                <li>Python 3.8+</li>
+                <li>FastAPI (web framework)</li>
+                <li>scikit-learn (machine learning)</li>
+                <li>pandas & numpy (data processing)</li>
+                <li>HTML/CSS/JavaScript (frontend)</li>
+            </ul>
+            
+            <div class="info-box">
+                <strong>Created for:</strong> AI-Driven Scam Pattern Recognition Hackathon<br>
+                <strong>Version:</strong> 1.0.0 (Prototype)<br>
+                <strong>Purpose:</strong> Demonstration and Education Only
+            </div>
+            
+<<<<<<< HEAD
+            <a href="/" class="back-button">Back to Demo</a>
+=======
+            <a href="/" class="back-button">← Back to Demo</a>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+        </div>
+    </div>
+</body>
+</html>

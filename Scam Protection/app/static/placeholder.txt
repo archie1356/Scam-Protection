@@ -1,0 +1,2 @@
+Static files directory for CSS, JavaScript, and images.
+Currently using inline styles in HTML templates.

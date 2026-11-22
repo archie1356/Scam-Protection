@@ -1,0 +1,22 @@
+# ScamShield - AI-Driven Scam Pattern Recognition Prototype
+# Python 3.8+ required
+
+# Core ML and Data Science
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+joblib>=1.1.0
+
+# Web Framework
+fastapi>=0.100.0
+uvicorn>=0.23.0
+python-multipart>=0.0.6
+jinja2>=3.1.0
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Visualization (optional, for analysis)
+matplotlib>=3.5.0
+seaborn>=0.12.0

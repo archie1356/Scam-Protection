@@ -1,0 +1,55 @@
+<<<<<<< HEAD
+case_id,description,expected_label,ml_prediction,ml_probability,rule_score,risk_tier,policy_action,top_reason_1,top_reason_2,top_reason_3
+N001,Regular payment to known merchant,0,0,0.004238284060356375,0,PASS,PASS,,,
+N002,Monthly bill payment,0,0,0.0009456645528597175,0,PASS,PASS,,,
+N003,First payment to new utility company,0,0,0.019773212015679328,25,SOFT_WARNING,SOFT_WARNING,This payee is new,Payee was added only 2 day(s) ago,
+N004,Annual insurance premium,0,0,0.03892854536521678,20,PASS,PASS,Payment amount is 8.5x higher than your usual amount,,
+N005,Normal payment while on call with friend,0,0,0.3284848894905456,15,PASS,PASS,An active call was detected during this payment,,
+N006,Normal transaction variant 6,0,0,0.01597887115671614,15,PASS,PASS,This payee is new,,
+N007,Normal transaction variant 7,0,0,0.0006992035983106321,0,PASS,PASS,,,
+N008,Normal transaction variant 8,0,0,0.002379692506787925,0,PASS,PASS,,,
+N009,Normal transaction variant 9,0,0,0.010116320757715585,15,PASS,PASS,This payee is new,,
+N010,Normal transaction variant 10,0,0,0.010018107154144296,0,PASS,PASS,,,
+S001,Active call + new payee + large amount,1,1,0.9980802520808442,70,HUMAN_REVIEW,HUMAN_REVIEW,Payment amount is 12.0x higher than your usual amount,An active call was detected during this payment,This payee is new
+S002,Remote app + new payee + coaching,1,1,0.9999873095574541,120,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 3 previous report(s),Payment amount is 7.5x higher than your usual amount
+S003,Known scammer payee,1,1,0.9999933082422612,95,HUMAN_REVIEW,HUMAN_REVIEW,This payee has 12 previous report(s),Payment amount is 5.5x higher than your usual amount,An active call was detected during this payment
+S004,All risk signals present,1,1,0.9999999947295972,120,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 8 previous report(s),Payment amount is 15.0x higher than your usual amount
+S005,Scam with normal amount,1,1,0.8288650457249083,50,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,An active call was detected during this payment,This payee is new,Payee was added only 1 day(s) ago
+S006,Scam variant 6,1,1,0.9999669167645089,120,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 1 previous report(s),Payment amount is 10.0x higher than your usual amount
+S007,Scam variant 7,1,1,0.9964497470307174,70,HUMAN_REVIEW,HUMAN_REVIEW,Payment amount is 8.5x higher than your usual amount,An active call was detected during this payment,This payee is new
+S008,Scam variant 8,1,1,0.9785792858667164,80,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,Payment amount is 6.0x higher than your usual amount,This payee is new
+S009,Scam variant 9,1,1,0.9999198385598065,105,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 1 previous report(s),Payment amount is 7.0x higher than your usual amount
+S010,Scam variant 10,1,1,0.9634773576040587,50,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,An active call was detected during this payment,This payee is new,Payee was added only 0 day(s) ago
+E001,New payee + large amount (but legitimate),0,0,0.1991384739323494,45,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,Payment amount is 6.0x higher than your usual amount,This payee is new,Payee was added only 3 day(s) ago
+E002,Careful user taking time (legitimate),0,0,0.037885115690232375,10,PASS,PASS,You have been on the confirmation screen for 35 seconds,,
+E003,Legitimate payee with false report,0,0,0.001528581400346211,25,SOFT_WARNING,SOFT_WARNING,This payee has 1 previous report(s),,
+E004,Borderline - hard to classify,0,1,0.8134878102763893,30,SOFT_WARNING,SOFT_WARNING,An active call was detected during this payment,This payee is new,
+E005,Simple scam with few obvious signals,1,1,0.8520147041519899,50,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,An active call was detected during this payment,This payee is new,Payee was added only 0 day(s) ago
+=======
+case_id,description,expected_label,ml_prediction,ml_probability,rule_score,risk_tier,policy_action,top_reason_1,top_reason_2,top_reason_3
+N001,Regular payment to known merchant,0,0,0.004238284060356375,0,PASS,PASS,,,
+N002,Monthly bill payment,0,0,0.0009456645528597175,0,PASS,PASS,,,
+N003,First payment to new utility company,0,0,0.019773212015679328,25,SOFT_WARNING,SOFT_WARNING,This payee is new,Payee was added only 2 day(s) ago,
+N004,Annual insurance premium,0,0,0.03892854536521678,20,PASS,PASS,Payment amount is 8.5x higher than your usual amount,,
+N005,Normal payment while on call with friend,0,0,0.3284848894905456,15,PASS,PASS,An active call was detected during this payment,,
+N006,Normal transaction variant 6,0,0,0.01597887115671614,15,PASS,PASS,This payee is new,,
+N007,Normal transaction variant 7,0,0,0.0006992035983106321,0,PASS,PASS,,,
+N008,Normal transaction variant 8,0,0,0.002379692506787925,0,PASS,PASS,,,
+N009,Normal transaction variant 9,0,0,0.010116320757715585,15,PASS,PASS,This payee is new,,
+N010,Normal transaction variant 10,0,0,0.010018107154144296,0,PASS,PASS,,,
+S001,Active call + new payee + large amount,1,1,0.9980802520808442,70,HUMAN_REVIEW,HUMAN_REVIEW,Payment amount is 12.0x higher than your usual amount,An active call was detected during this payment,This payee is new
+S002,Remote app + new payee + coaching,1,1,0.9999873095574541,120,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 3 previous report(s),Payment amount is 7.5x higher than your usual amount
+S003,Known scammer payee,1,1,0.9999933082422612,95,HUMAN_REVIEW,HUMAN_REVIEW,This payee has 12 previous report(s),Payment amount is 5.5x higher than your usual amount,An active call was detected during this payment
+S004,All risk signals present,1,1,0.9999999947295972,120,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 8 previous report(s),Payment amount is 15.0x higher than your usual amount
+S005,Scam with normal amount,1,1,0.8288650457249083,50,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,An active call was detected during this payment,This payee is new,Payee was added only 1 day(s) ago
+S006,Scam variant 6,1,1,0.9999669167645089,120,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 1 previous report(s),Payment amount is 10.0x higher than your usual amount
+S007,Scam variant 7,1,1,0.9964497470307174,70,HUMAN_REVIEW,HUMAN_REVIEW,Payment amount is 8.5x higher than your usual amount,An active call was detected during this payment,This payee is new
+S008,Scam variant 8,1,1,0.9785792858667164,80,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,Payment amount is 6.0x higher than your usual amount,This payee is new
+S009,Scam variant 9,1,1,0.9999198385598065,105,HUMAN_REVIEW,HUMAN_REVIEW,A remote-access application appears to be active,This payee has 1 previous report(s),Payment amount is 7.0x higher than your usual amount
+S010,Scam variant 10,1,1,0.9634773576040587,50,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,An active call was detected during this payment,This payee is new,Payee was added only 0 day(s) ago
+E001,New payee + large amount (but legitimate),0,0,0.1991384739323494,45,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,Payment amount is 6.0x higher than your usual amount,This payee is new,Payee was added only 3 day(s) ago
+E002,Careful user taking time (legitimate),0,0,0.037885115690232375,10,PASS,PASS,You have been on the confirmation screen for 35 seconds,,
+E003,Legitimate payee with false report,0,0,0.001528581400346211,25,SOFT_WARNING,SOFT_WARNING,This payee has 1 previous report(s),,
+E004,Borderline - hard to classify,0,1,0.8134878102763893,30,SOFT_WARNING,SOFT_WARNING,An active call was detected during this payment,This payee is new,
+E005,Simple scam with few obvious signals,1,1,0.8520147041519899,50,DELAY_AND_CONFIRM,DELAY_AND_CONFIRM,An active call was detected during this payment,This payee is new,Payee was added only 0 day(s) ago
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6

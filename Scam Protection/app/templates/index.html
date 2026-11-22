@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamShield Pay - Prototype</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+<<<<<<< HEAD
+            background: rgb(28, 3, 1);
+=======
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .prototype-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .scenario-selector {
+            margin-bottom: 20px;
+        }
+        
+        .scenario-selector label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .scenario-selector select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        .scenario-selector select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .payment-details {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .payment-row:last-child {
+            border-bottom: none;
+        }
+        
+        .payment-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .payment-value {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .amount {
+            font-size: 1.5em;
+            color: #667eea;
+        }
+        
+        .button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .button-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .button-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .button-secondary {
+            background: #e0e0e0;
+            color: #333;
+            margin-top: 10px;
+        }
+        
+        .button-secondary:hover {
+            background: #d0d0d0;
+        }
+        
+        .risk-result {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .risk-result.show {
+            display: block;
+        }
+        
+        .risk-pass {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+        
+        .risk-warning {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+        }
+        
+        .risk-danger {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+        
+        .risk-critical {
+            background: #f8d7da;
+            border: 3px solid #dc3545;
+        }
+        
+        .risk-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .risk-message {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .risk-score {
+            font-size: 0.9em;
+            margin-bottom: 16px;
+            padding: 12px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+        
+        .reasons-list {
+            margin: 16px 0;
+        }
+        
+        .reasons-list h4 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .reason-item {
+            padding: 8px 12px;
+            margin: 6px 0;
+            background: rgba(0,0,0,0.05);
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+        
+        .safety-tips {
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(0,0,0,0.08);
+            border-radius: 8px;
+        }
+        
+        .safety-tips h4 {
+            margin-bottom: 8px;
+            color: #dc3545;
+        }
+        
+        .safety-tips ul {
+            margin-left: 20px;
+        }
+        
+        .safety-tips li {
+            margin: 6px 0;
+            font-size: 0.9em;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .info-box {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+<<<<<<< HEAD
+            <h1>ScamShield Pay</h1>
+=======
+            <h1>🛡️ ScamShield Pay</h1>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            <div class="subtitle">AI-Driven Coached-Payment Fraud Detection</div>
+            <div class="prototype-badge">PROTOTYPE - SYNTHETIC DATA ONLY</div>
+        </div>
+        
+        <div class="info-box">
+<<<<<<< HEAD
+            This is a demonstration prototype. All scenarios use synthetic data.<br>
+=======
+            ℹ️ This is a demonstration prototype. All scenarios use synthetic data.<br>
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+            No real payment, banking, or customer information is used.
+        </div>
+        
+        <div class="card">
+            <div class="scenario-selector">
+                <label for="scenario">Select Demo Scenario:</label>
+                <select id="scenario" onchange="loadScenario()">
+                    <option value="">-- Choose a scenario --</option>
+                    <option value="normal">Normal Payment</option>
+                    <option value="new_payee_large">New Payee + Large Amount</option>
+                    <option value="call_new_payee">Active Call + New Payee</option>
+                    <option value="remote_access">Remote Access + Coaching</option>
+                    <option value="high_risk">High-Risk Coached Payment</option>
+                    <option value="legitimate_large">Legitimate Large Payment</option>
+                </select>
+            </div>
+            
+            <div id="payment-section" style="display: none;">
+                <div class="payment-details">
+                    <div class="payment-row">
+                        <span class="payment-label">Payee</span>
+                        <span class="payment-value" id="payee-name">-</span>
+                    </div>
+                    <div class="payment-row">
+                        <span class="payment-label">Payee ID</span>
+                        <span class="payment-value" id="payee-id">-</span>
+                    </div>
+                    <div class="payment-row">
+                        <span class="payment-label">Purpose</span>
+                        <span class="payment-value" id="purpose">-</span>
+                    </div>
+                    <div class="payment-row">
+                        <span class="payment-label">Amount</span>
+                        <span class="payment-value amount" id="amount">-</span>
+                    </div>
+                </div>
+                
+                <button class="button button-primary" onclick="analyzePayment()">
+                    Analyze Payment Risk
+                </button>
+                
+                <div id="loading" class="loading" style="display: none;">
+                    Analyzing transaction...
+                </div>
+                
+                <div id="risk-result" class="risk-result">
+                    <div class="risk-title" id="risk-title"></div>
+                    <div class="risk-message" id="risk-message"></div>
+                    <div class="risk-score" id="risk-score"></div>
+                    <div id="reasons-section"></div>
+                    <div id="safety-tips-section"></div>
+                    <button class="button button-secondary" onclick="reset()">
+                        Try Another Scenario
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Privacy Notice:</strong> ScamShield analyzes transaction metadata only.</p>
+            <p>No call audio is recorded or analyzed.</p>
+            <p style="margin-top: 10px;">
+                <a href="/about">About this prototype</a>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        let currentScenario = null;
+        
+        function loadScenario() {
+            const scenarioId = document.getElementById('scenario').value;
+            
+            if (!scenarioId) {
+                document.getElementById('payment-section').style.display = 'none';
+                return;
+            }
+            
+            fetch(`/api/scenario/${scenarioId}`)
+                .then(response => response.json())
+                .then(data => {
+                    currentScenario = data;
+                    
+                    document.getElementById('payee-name').textContent = data.payee_name;
+                    document.getElementById('payee-id').textContent = data.payee_id;
+                    document.getElementById('purpose').textContent = data.purpose;
+                    document.getElementById('amount').textContent = data.amount;
+                    
+                    document.getElementById('payment-section').style.display = 'block';
+                    document.getElementById('risk-result').classList.remove('show');
+                });
+        }
+        
+        function analyzePayment() {
+            if (!currentScenario) return;
+            
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('risk-result').classList.remove('show');
+            
+            fetch('/api/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    features: currentScenario.features
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                displayRiskResult(data);
+            })
+            .catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                alert('Error analyzing payment: ' + error);
+            });
+        }
+        
+        function displayRiskResult(data) {
+            const resultDiv = document.getElementById('risk-result');
+            const risk = data.risk_assessment;
+            const policy = data.policy;
+            
+            // Set title and message
+            document.getElementById('risk-title').textContent = policy.title;
+            document.getElementById('risk-message').textContent = policy.message;
+            
+            // Set risk score
+            document.getElementById('risk-score').innerHTML = `
+                <strong>Risk Score:</strong> ${risk.rule_score} | 
+                <strong>ML Confidence:</strong> ${risk.ml_probability_pct}%
+            `;
+            
+            // Set color based on severity
+            resultDiv.className = 'risk-result show';
+            if (policy.severity === 'low') {
+                resultDiv.classList.add('risk-pass');
+            } else if (policy.severity === 'medium') {
+                resultDiv.classList.add('risk-warning');
+            } else if (policy.severity === 'high') {
+                resultDiv.classList.add('risk-danger');
+            } else if (policy.severity === 'critical') {
+                resultDiv.classList.add('risk-critical');
+            }
+            
+            // Display reasons
+            const reasonsSection = document.getElementById('reasons-section');
+            if (risk.top_reasons && risk.top_reasons.length > 0) {
+                let reasonsHtml = '<div class="reasons-list"><h4>Why this was flagged:</h4>';
+                risk.top_reasons.forEach((reason, index) => {
+                    reasonsHtml += `<div class="reason-item">${index + 1}. ${reason}</div>`;
+                });
+                reasonsHtml += '</div>';
+                reasonsSection.innerHTML = reasonsHtml;
+            } else {
+                reasonsSection.innerHTML = '';
+            }
+            
+            // Display safety tips
+            const safetySection = document.getElementById('safety-tips-section');
+            if (policy.safety_tips && policy.safety_tips.length > 0) {
+<<<<<<< HEAD
+                let safetyHtml = '<div class="safety-tips"><h4>Safety Tips:</h4><ul>';
+=======
+                let safetyHtml = '<div class="safety-tips"><h4>⚠️ Safety Tips:</h4><ul>';
+>>>>>>> afb78ac4cb68de80270c30277448f314c4289cf6
+                policy.safety_tips.forEach(tip => {
+                    safetyHtml += `<li>${tip}</li>`;
+                });
+                safetyHtml += '</ul></div>';
+                safetySection.innerHTML = safetyHtml;
+            } else {
+                safetySection.innerHTML = '';
+            }
+        }
+        
+        function reset() {
+            document.getElementById('scenario').value = '';
+            document.getElementById('payment-section').style.display = 'none';
+            document.getElementById('risk-result').classList.remove('show');
+            currentScenario = null;
+        }
+    </script>
+</body>
+</html>
